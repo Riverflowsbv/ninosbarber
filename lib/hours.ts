@@ -1,5 +1,4 @@
-// Openingstijden — TE BEVESTIGEN met Nino.
-// Dit zijn voorbeeld-tijden; vervang ze door de echte tijden.
+// Openingstijden — echte tijden van Nino (bevestigd).
 // closed = true => gesloten die dag. Anders open/close in "HH:MM".
 
 export type DayHours = {
@@ -13,11 +12,11 @@ export type DayHours = {
 // Volgorde: maandag t/m zondag.
 export const openingHours: DayHours[] = [
   { key: "Mo", label: "Maandag", closed: true },
-  { key: "Tu", label: "Dinsdag", closed: false, open: "09:00", close: "18:00" },
-  { key: "We", label: "Woensdag", closed: false, open: "09:00", close: "18:00" },
-  { key: "Th", label: "Donderdag", closed: false, open: "09:00", close: "20:00" },
-  { key: "Fr", label: "Vrijdag", closed: false, open: "09:00", close: "18:00" },
-  { key: "Sa", label: "Zaterdag", closed: false, open: "09:00", close: "17:00" },
+  { key: "Tu", label: "Dinsdag", closed: false, open: "09:00", close: "17:00" },
+  { key: "We", label: "Woensdag", closed: false, open: "09:00", close: "17:00" },
+  { key: "Th", label: "Donderdag", closed: false, open: "09:00", close: "17:00" },
+  { key: "Fr", label: "Vrijdag", closed: false, open: "09:00", close: "17:00" },
+  { key: "Sa", label: "Zaterdag", closed: false, open: "08:30", close: "16:30" },
   { key: "Su", label: "Zondag", closed: true },
 ];
 

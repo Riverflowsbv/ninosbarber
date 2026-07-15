@@ -38,10 +38,6 @@ export const metadata: Metadata = {
     "Nino's Barber",
   ],
   alternates: { canonical: "/" },
-  icons: {
-    icon: "/logo.png",
-    apple: "/logo.png",
-  },
   openGraph: {
     type: "website",
     locale: "nl_NL",

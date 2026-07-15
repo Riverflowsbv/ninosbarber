@@ -1,53 +1,76 @@
 "use client";
 
 import { useState } from "react";
-import { site } from "@/lib/site";
+
+/** Gekruiste schaar + kam — klassiek barber-embleem, scherpe vector. */
+export function LogoMark({ size = 34 }: { size?: number }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 48 48"
+      fill="none"
+      aria-hidden="true"
+      style={{ flexShrink: 0 }}
+    >
+      <g
+        stroke="var(--gold)"
+        strokeWidth="2.1"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        {/* Kam */}
+        <g transform="rotate(45 24 24)">
+          <rect x="21" y="10" width="6" height="22" rx="3" />
+          <path d="M27 14h4M27 19h4M27 24h4M27 29h4" />
+        </g>
+        {/* Schaar */}
+        <g transform="rotate(-45 24 24)">
+          <circle cx="20" cy="34" r="3.6" />
+          <circle cx="28" cy="34" r="3.6" />
+          <path d="M21.7 31 L29 13" />
+          <path d="M26.3 31 L19 13" />
+        </g>
+        <circle cx="24" cy="23.5" r="1.4" fill="var(--gold)" stroke="none" />
+      </g>
+    </svg>
+  );
+}
 
 /**
- * Toont het officiële embleem uit /public/logo.png.
- * Bestaat dat bestand nog niet, dan valt het automatisch terug op een
- * strak tekst-woordmerk met barberpole-icoontje. Zo is de site nooit "stuk".
- * Zet het echte logo neer als /public/logo.png en het schakelt vanzelf over.
+ * Logo-lockup: het schaar+kam-merk met het woordmerk "Nino's Barber".
+ * Staat er een eigen /public/logo.png? Dan wint die en toont het echte embleem.
+ * Zo niet, dan blijft deze scherpe vector-lockup staan.
  */
 export default function Logo({ height = 40 }: { height?: number }) {
-  const [ok, setOk] = useState(true);
+  const [useImage, setUseImage] = useState(true);
 
-  if (ok) {
+  if (useImage) {
     return (
       // eslint-disable-next-line @next/next/no-img-element
       <img
         src="/logo.png"
         alt="Nino's Barber"
         style={{ height, width: "auto", display: "block" }}
-        onError={() => setOk(false)}
+        onError={() => setUseImage(false)}
       />
     );
   }
 
-  // Fallback-woordmerk
   return (
     <span style={{ display: "inline-flex", alignItems: "center", gap: "0.6rem" }}>
-      <svg width={height * 0.62} height={height * 0.62} viewBox="0 0 26 26" aria-hidden="true" style={{ flexShrink: 0 }}>
-        <defs>
-          <clipPath id="poleClip">
-            <rect x="9" y="2" width="8" height="22" rx="4" />
-          </clipPath>
-        </defs>
-        <rect x="9" y="2" width="8" height="22" rx="4" fill="#14161c" stroke="var(--gold)" strokeWidth="1.5" />
-        <g clipPath="url(#poleClip)">
-          <g fill="var(--gold)" opacity="0.9">
-            <rect x="4" y="-6" width="4" height="40" transform="rotate(32 13 13)" />
-            <rect x="12" y="-6" width="4" height="40" transform="rotate(32 13 13)" />
-            <rect x="20" y="-6" width="4" height="40" transform="rotate(32 13 13)" />
-            <rect x="-4" y="-6" width="4" height="40" transform="rotate(32 13 13)" />
-          </g>
-        </g>
-      </svg>
+      <LogoMark size={height * 0.92} />
       <span
         className="display"
-        style={{ fontSize: height * 0.5, letterSpacing: "0.02em", lineHeight: 1, color: "var(--ink)" }}
+        style={{
+          fontSize: height * 0.52,
+          letterSpacing: "0.03em",
+          lineHeight: 1,
+          whiteSpace: "nowrap",
+        }}
       >
-        {site.name}
+        <span style={{ color: "var(--ink)" }}>Nino&apos;s</span>{" "}
+        <span style={{ color: "var(--gold)" }}>Barber</span>
       </span>
     </span>
   );

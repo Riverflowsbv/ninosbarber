@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 /** Gekruiste schaar + kam — klassiek barber-embleem, scherpe vector. */
 export function LogoMark({ size = 34 }: { size?: number }) {
@@ -38,21 +38,28 @@ export function LogoMark({ size = 34 }: { size?: number }) {
 }
 
 /**
- * Logo-lockup: het schaar+kam-merk met het woordmerk "Nino's Barber".
- * Staat er een eigen /public/logo.png? Dan wint die en toont het echte embleem.
- * Zo niet, dan blijft deze scherpe vector-lockup staan.
+ * Toont standaard de scherpe vector-lockup (schaar+kam + woordmerk).
+ * Alleen als /public/logo.png echt bestaat en laadt, wisselt hij naar dat
+ * embleem. Zo verschijnt er nooit een kapotte afbeelding.
  */
 export default function Logo({ height = 40 }: { height?: number }) {
-  const [useImage, setUseImage] = useState(true);
+  const [hasImage, setHasImage] = useState(false);
 
-  if (useImage) {
+  useEffect(() => {
+    const img = new window.Image();
+    img.onload = () => {
+      if (img.naturalWidth > 1) setHasImage(true);
+    };
+    img.src = "/logo.png";
+  }, []);
+
+  if (hasImage) {
     return (
       // eslint-disable-next-line @next/next/no-img-element
       <img
         src="/logo.png"
         alt="Nino's Barber"
         style={{ height, width: "auto", display: "block" }}
-        onError={() => setUseImage(false)}
       />
     );
   }

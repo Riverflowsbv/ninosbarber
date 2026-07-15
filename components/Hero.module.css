@@ -204,4 +204,15 @@
   .scroll {
     display: none;
   }
+  .meta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.35rem 1rem;
+    align-items: start;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+  }
+  .metaNum {
+    font-size: 1.5rem;
+  }
 }

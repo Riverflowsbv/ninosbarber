@@ -115,7 +115,7 @@ export default function Hero() {
             </div>
             <div className={styles.metaItem}>
               <span className={styles.metaNum}>Op afspraak</span>
-              <span className={styles.metaLabel}>Snel geboekt via WhatsApp</span>
+              <span className={styles.metaLabel}>Via WhatsApp</span>
             </div>
             <div className={styles.metaItem}>
               <span className={styles.metaNum}>Sinds 2021</span>

@@ -490,6 +490,16 @@ p {
   }
 }
 
+/* Kortere sectie-afstanden op telefoon (minder lege ruimte tussen blokken). */
+@media (max-width: 640px) {
+  :root {
+    --section-y: 2.75rem;
+  }
+  .section-head {
+    margin-bottom: 2rem;
+  }
+}
+
 /* --------------------------- Reduced motion --------------------------- */
 @media (prefers-reduced-motion: reduce) {
   html {

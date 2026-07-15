@@ -8,33 +8,64 @@
   overflow: hidden;
   background: radial-gradient(120% 90% at 50% 0%, #191c24, #0c0d11 70%);
   border: 1px solid var(--border);
-  display: grid;
-  place-items: center;
+  perspective: 1000px;
+  cursor: pointer;
   isolation: isolate;
+  --gx: 50%;
+  --gy: 34%;
 }
 
-.glowBlob {
+/* Goud-glow die de cursor volgt (of rust op de standaardplek). */
+.cursorGlow {
   position: absolute;
-  width: 70%;
-  height: 40%;
-  top: 8%;
-  filter: blur(60px);
-  background: radial-gradient(circle, rgba(200, 163, 106, 0.28), transparent 70%);
+  inset: 0;
   z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    40% 32% at var(--gx) var(--gy),
+    rgba(200, 163, 106, 0.3),
+    transparent 70%
+  );
+  transition: background 0.2s ease;
+}
+
+.stage:hover .cursorGlow {
+  background: radial-gradient(
+    44% 36% at var(--gx) var(--gy),
+    rgba(200, 163, 106, 0.42),
+    transparent 72%
+  );
+}
+
+/* 3D-laag die met de muis meekantelt. */
+.tilt {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  transform-style: preserve-3d;
+  transition: transform 0.45s cubic-bezier(0.16, 0.84, 0.44, 1);
+  will-change: transform;
 }
 
 /* De barberpole */
 .pole {
   position: relative;
-  z-index: 1;
   width: 64px;
   height: 68%;
   border-radius: 40px;
   background: #0e0f13;
   border: 2px solid rgba(200, 163, 106, 0.5);
   overflow: hidden;
-  box-shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.9),
+  transform: translateZ(34px);
+  transition: transform 0.45s cubic-bezier(0.16, 0.84, 0.44, 1);
+  box-shadow: 0 24px 60px -20px rgba(0, 0, 0, 0.9),
     inset 0 0 30px rgba(0, 0, 0, 0.6);
+}
+
+.stage:hover .pole {
+  transform: translateZ(54px) scale(1.03);
 }
 
 .stripes {
@@ -48,6 +79,11 @@
   background-size: 100% 44px;
   animation: barberpole 2.4s linear infinite;
   opacity: 0.92;
+}
+
+/* Strepen draaien sneller als je erover hovert. */
+.stage:hover .stripes {
+  animation-duration: 1.05s;
 }
 
 .gloss {
@@ -66,7 +102,7 @@
   position: absolute;
   z-index: 2;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) translateZ(20px);
   width: 78px;
   height: 20px;
   border-radius: 6px;
@@ -112,6 +148,7 @@
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--ink-faint);
+  pointer-events: none;
 }
 
 .dot {
@@ -123,4 +160,11 @@
   display: inline-block;
   margin-right: 6px;
   vertical-align: middle;
+}
+
+/* Op touch-schermen geen kantel-hint-cursor. */
+@media (hover: none) {
+  .stage {
+    cursor: default;
+  }
 }

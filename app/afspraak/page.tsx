@@ -105,31 +105,13 @@ export default function AfspraakPage() {
           </div>
 
           {/* ================================================================
-              UPGRADE-SLOT — online agenda (Salonized / Booksy / Treatwell)
-              ----------------------------------------------------------------
-              Wil Nino later een échte online agenda met tijdslots?
-              Vervang het blok hieronder door de embed-code van de gekozen tool.
-              Voorbeeld (Salonized):
+              UPGRADE-SLOT (optioneel, later) — online agenda met tijdslots.
+              Nino houdt het bewust bij WhatsApp-boekingen. Wil hij later tóch
+              een online agenda (Salonized / Booksy), plaats hier de embed:
                 <iframe src="https://SALON.salonized.com/widget_bookings/new"
                         style={{ width: "100%", minHeight: 700, border: 0 }} />
-              Voorbeeld (Booksy): plak hun widget-script + div hier.
               De rest van de pagina hoeft niet te wijzigen.
           ================================================================= */}
-          <div
-            style={{
-              marginTop: "clamp(2.5rem, 5vw, 4rem)",
-              padding: "1.5rem",
-              borderRadius: "var(--r-md)",
-              border: "1px dashed var(--border-strong)",
-              background: "var(--bg-alt)",
-              color: "var(--ink-faint)",
-              fontSize: "0.9rem",
-              textAlign: "center",
-            }}
-          >
-            Liever zelf online een tijdslot kiezen? Die optie voegen we hier
-            binnenkort toe.
-          </div>
         </div>
       </section>
     </>

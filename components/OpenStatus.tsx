@@ -62,12 +62,13 @@ export default function OpenStatus({ compact = false }: { compact?: boolean }) {
       }}
     >
       <span
+        className={open ? "dot-pulse" : undefined}
         style={{
           width: 9,
           height: 9,
           borderRadius: "50%",
           background: color,
-          boxShadow: `0 0 0 4px ${color}22`,
+          boxShadow: open ? undefined : `0 0 0 4px ${color}22`,
         }}
       />
       {text}

@@ -467,6 +467,23 @@ p {
   font-variant-numeric: tabular-nums;
 }
 
+/* Pulserende groene "open"-indicator. */
+@keyframes dot-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(62, 207, 122, 0.55);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(62, 207, 122, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(62, 207, 122, 0);
+  }
+}
+
+.dot-pulse {
+  animation: dot-pulse 2.2s ease-out infinite;
+}
+
 .center {
   text-align: center;
 }

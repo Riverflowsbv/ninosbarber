@@ -1,3 +1,37 @@
+/* Keyframes lokaal zodat CSS-Modules de scoped naam matcht. */
+@keyframes barberpole {
+  to {
+    background-position: 0 -80px;
+  }
+}
+@keyframes float-y {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-9px);
+  }
+}
+@keyframes scroll-line {
+  0% {
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  40% {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+  60% {
+    transform: scaleY(1);
+    transform-origin: bottom;
+  }
+  100% {
+    transform: scaleY(0);
+    transform-origin: bottom;
+  }
+}
+
 .hero {
   position: relative;
   min-height: 100dvh;

@@ -1,3 +1,10 @@
+/* Keyframe lokaal zodat CSS-Modules de scoped naam matcht. */
+@keyframes barberpole {
+  to {
+    background-position: 0 -80px;
+  }
+}
+
 .header {
   position: relative;
   overflow: hidden;

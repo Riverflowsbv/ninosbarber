@@ -1,3 +1,16 @@
+/* Keyframe lokaal zodat CSS-Modules de scoped naam matcht. */
+@keyframes ring-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.55);
+  }
+  70% {
+    box-shadow: 0 0 0 14px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
 .fab {
   position: fixed;
   right: clamp(1rem, 3vw, 1.75rem);

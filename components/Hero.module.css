@@ -1,0 +1,173 @@
+.hero {
+  position: relative;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding-top: 7rem;
+  padding-bottom: 4rem;
+  isolation: isolate;
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background:
+    radial-gradient(120% 80% at 15% 10%, rgba(200, 163, 106, 0.14), transparent 55%),
+    radial-gradient(90% 70% at 90% 100%, rgba(200, 163, 106, 0.08), transparent 60%),
+    linear-gradient(180deg, #0b0c10 0%, #0d0e12 60%, #0a0b0e 100%);
+}
+
+/* Draaiende barberpole-band als rechter accent (achtergrond). */
+.pole {
+  position: absolute;
+  top: -10%;
+  right: -4%;
+  width: min(38vw, 460px);
+  height: 120%;
+  z-index: -1;
+  opacity: 0.5;
+  background: repeating-linear-gradient(
+    -35deg,
+    transparent 0 26px,
+    rgba(200, 163, 106, 0.16) 26px 52px
+  );
+  background-size: 100% 80px;
+  animation: barberpole 3.4s linear infinite;
+  -webkit-mask-image: radial-gradient(60% 60% at 70% 40%, #000 0%, transparent 75%);
+  mask-image: radial-gradient(60% 60% at 70% 40%, #000 0%, transparent 75%);
+}
+
+.particles {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--gold);
+  opacity: 0.35;
+  animation: float-y 6s ease-in-out infinite;
+}
+
+.content {
+  width: 100%;
+  max-width: 60rem;
+}
+
+.eyebrowRow {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  font-family: var(--font-display), sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 0.92;
+  font-size: clamp(3.25rem, 12vw, 8.5rem);
+  color: var(--ink);
+}
+
+.title .line2 {
+  display: block;
+  color: var(--gold);
+}
+
+.title .thin {
+  -webkit-text-stroke: 1.5px var(--gold);
+  color: transparent;
+}
+
+.sub {
+  margin-top: 1.6rem;
+  font-size: clamp(1.05rem, 1.7vw, 1.35rem);
+  color: var(--ink-muted);
+  max-width: 40ch;
+  line-height: 1.55;
+}
+
+.actions {
+  margin-top: 2.4rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  align-items: center;
+}
+
+.meta {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.75rem 2.5rem;
+  align-items: center;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+  max-width: 44rem;
+}
+
+.metaItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.metaNum {
+  font-family: var(--font-display), sans-serif;
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1;
+}
+
+.metaLabel {
+  font-size: 0.82rem;
+  color: var(--ink-faint);
+  letter-spacing: 0.04em;
+}
+
+.scroll {
+  position: absolute;
+  left: 50%;
+  bottom: 1.75rem;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  z-index: 1;
+}
+
+.scrollLine {
+  width: 1px;
+  height: 46px;
+  background: var(--gold);
+  transform-origin: top;
+  animation: scroll-line 2.4s ease-in-out infinite;
+}
+
+.scrollLabel {
+  font-size: 0.7rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+@media (max-width: 560px) {
+  .actions .btn {
+    width: 100%;
+  }
+  .scroll {
+    display: none;
+  }
+}

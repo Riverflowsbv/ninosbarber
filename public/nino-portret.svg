@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1100" viewBox="0 0 900 1100" role="img" aria-label="Portret van Nino — foto volgt">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#191c24"/>
+      <stop offset="1" stop-color="#0c0d11"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.34" r="0.6">
+      <stop offset="0" stop-color="#c8a36a" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#c8a36a" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="900" height="1100" fill="url(#bg)"/>
+  <rect width="900" height="1100" fill="url(#glow)"/>
+  <g fill="none" stroke="#c8a36a" stroke-opacity="0.55" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="450" cy="430" r="120"/>
+    <path d="M300 720c0-95 68-160 150-160s150 65 150 160"/>
+    <path d="M360 400c0-55 40-95 90-95s90 40 90 95"/>
+  </g>
+  <text x="450" y="880" text-anchor="middle" font-family="Barlow Condensed, Arial, sans-serif" font-size="58" letter-spacing="4" fill="#ffffff" fill-opacity="0.92" font-weight="700">NINO</text>
+  <text x="450" y="928" text-anchor="middle" font-family="Barlow, Arial, sans-serif" font-size="24" letter-spacing="6" fill="#c8a36a" fill-opacity="0.85">PORTRET VOLGT</text>
+</svg>

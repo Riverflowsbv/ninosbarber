@@ -1,0 +1,335 @@
+/* ---------- Marquee strip ---------- */
+.marquee {
+  border-block: 1px solid var(--border);
+  background: var(--deep);
+  padding-block: 1.4rem;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+}
+
+.marqueeTrack {
+  display: flex;
+  width: max-content;
+  gap: 3rem;
+  animation: marquee 26s linear infinite;
+}
+
+.marquee:hover .marqueeTrack {
+  animation-play-state: paused;
+}
+
+.marqueeItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 3rem;
+  font-family: var(--font-display), sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--ink-muted);
+  white-space: nowrap;
+}
+
+.marqueeDot {
+  color: var(--gold);
+}
+
+/* ---------- Split (image + text) ---------- */
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: center;
+}
+
+.splitReverse .splitMedia {
+  order: 2;
+}
+
+.splitBody .lead {
+  margin-top: 1.1rem;
+}
+
+.featureList {
+  margin-top: 1.75rem;
+  display: grid;
+  gap: 0.9rem;
+}
+
+.featureRow {
+  display: flex;
+  gap: 0.8rem;
+  align-items: flex-start;
+}
+
+.featureRow .tick {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: rgba(200, 163, 106, 0.14);
+  color: var(--gold);
+  margin-top: 2px;
+}
+
+.featureRow strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.featureRow p {
+  font-size: 0.92rem;
+  margin-top: 2px;
+}
+
+/* ---------- Stats ---------- */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+}
+
+.stat {
+  background: var(--bg);
+  padding: 2.25rem 1.75rem;
+  position: relative;
+}
+
+.statNum {
+  font-family: var(--font-display), sans-serif;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+}
+
+.statLabel {
+  margin-top: 0.6rem;
+  color: var(--ink-muted);
+  font-size: 0.95rem;
+}
+
+.statSweep {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.statSweep span {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  animation: sweep 3.5s ease-in-out infinite;
+}
+
+/* ---------- Reviews ---------- */
+.reviews {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.review {
+  padding: 1.7rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.stars {
+  display: flex;
+  gap: 3px;
+  color: var(--gold);
+}
+
+.reviewText {
+  color: var(--ink);
+  font-size: 1rem;
+  line-height: 1.55;
+  flex: 1;
+}
+
+.reviewName {
+  font-weight: 600;
+  color: var(--ink-muted);
+  font-size: 0.9rem;
+}
+
+/* ---------- Location / hours ---------- */
+.locationGrid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.mapWrap {
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  min-height: 340px;
+  background: var(--surface);
+}
+
+.mapWrap iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 340px;
+  border: 0;
+  filter: grayscale(0.3) contrast(1.05);
+}
+
+.hoursCard {
+  padding: 2rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  display: flex;
+  flex-direction: column;
+}
+
+.hoursList {
+  margin-top: 1.25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.hoursRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.98rem;
+}
+
+.hoursRow:last-child {
+  border-bottom: 0;
+}
+
+.hoursRow.today {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.hoursDay {
+  color: inherit;
+}
+
+.hoursTime {
+  color: var(--ink-muted);
+}
+
+.hoursRow.today .hoursTime {
+  color: var(--gold);
+}
+
+.closed {
+  color: var(--ink-faint);
+}
+
+.contactLine {
+  margin-top: auto;
+  padding-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.contactItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--ink-muted);
+  transition: color 0.2s var(--ease);
+}
+
+.contactItem:hover {
+  color: var(--gold);
+}
+
+/* ---------- CTA band ---------- */
+.cta {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--r-lg);
+  padding: clamp(2.5rem, 6vw, 5rem);
+  text-align: center;
+  background: linear-gradient(135deg, #16130d, #0d0e12 60%);
+  border: 1px solid rgba(200, 163, 106, 0.28);
+}
+
+.cta h2 {
+  max-width: 20ch;
+  margin-inline: auto;
+}
+
+.cta p {
+  max-width: 46ch;
+  margin: 1rem auto 0;
+}
+
+.ctaActions {
+  margin-top: 2rem;
+  display: flex;
+  gap: 0.9rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.ctaPole {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.35;
+  background: repeating-linear-gradient(
+    -35deg,
+    transparent 0 30px,
+    rgba(200, 163, 106, 0.1) 30px 60px
+  );
+  background-size: 100% 90px;
+  animation: barberpole 4s linear infinite;
+  -webkit-mask-image: radial-gradient(70% 120% at 50% 0%, #000, transparent 70%);
+  mask-image: radial-gradient(70% 120% at 50% 0%, #000, transparent 70%);
+}
+
+.ctaInner {
+  position: relative;
+  z-index: 1;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 860px) {
+  .split,
+  .locationGrid {
+    grid-template-columns: 1fr;
+  }
+  .splitReverse .splitMedia {
+    order: 0;
+  }
+  .stats {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats {
+    grid-template-columns: 1fr;
+  }
+  .marqueeItem {
+    font-size: 1.2rem;
+  }
+}

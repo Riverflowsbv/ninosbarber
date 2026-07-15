@@ -1,0 +1,126 @@
+.stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  max-width: 420px;
+  margin-inline: auto;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  background: radial-gradient(120% 90% at 50% 0%, #191c24, #0c0d11 70%);
+  border: 1px solid var(--border);
+  display: grid;
+  place-items: center;
+  isolation: isolate;
+}
+
+.glowBlob {
+  position: absolute;
+  width: 70%;
+  height: 40%;
+  top: 8%;
+  filter: blur(60px);
+  background: radial-gradient(circle, rgba(200, 163, 106, 0.28), transparent 70%);
+  z-index: 0;
+}
+
+/* De barberpole */
+.pole {
+  position: relative;
+  z-index: 1;
+  width: 64px;
+  height: 68%;
+  border-radius: 40px;
+  background: #0e0f13;
+  border: 2px solid rgba(200, 163, 106, 0.5);
+  overflow: hidden;
+  box-shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.9),
+    inset 0 0 30px rgba(0, 0, 0, 0.6);
+}
+
+.stripes {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    -38deg,
+    var(--gold) 0 14px,
+    #14161c 14px 28px
+  );
+  background-size: 100% 44px;
+  animation: barberpole 2.4s linear infinite;
+  opacity: 0.92;
+}
+
+.gloss {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.28) 0%,
+    transparent 30%,
+    transparent 70%,
+    rgba(0, 0, 0, 0.35) 100%
+  );
+}
+
+.cap {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 78px;
+  height: 20px;
+  border-radius: 6px;
+  background: linear-gradient(180deg, #d8bd8e, #9c7c48);
+  box-shadow: 0 6px 14px -6px rgba(0, 0, 0, 0.8);
+}
+
+.capTop {
+  top: 12%;
+}
+.capBottom {
+  bottom: 12%;
+}
+
+/* Vallende haar-snippers */
+.hairField {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.hair {
+  position: absolute;
+  top: 10%;
+  width: 2px;
+  height: 16px;
+  border-radius: 2px;
+  background: rgba(200, 163, 106, 0.7);
+  animation: hair-fall linear infinite;
+}
+
+.label {
+  position: absolute;
+  z-index: 4;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #3ecf7a;
+  animation: ring-pulse 2.4s ease-out infinite;
+  display: inline-block;
+  margin-right: 6px;
+  vertical-align: middle;
+}

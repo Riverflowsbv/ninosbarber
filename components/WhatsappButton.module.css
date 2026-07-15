@@ -1,0 +1,53 @@
+.fab {
+  position: fixed;
+  right: clamp(1rem, 3vw, 1.75rem);
+  bottom: clamp(1rem, 3vw, 1.75rem);
+  z-index: 90;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.85rem 1.05rem;
+  border-radius: var(--r-full);
+  background: #25d366;
+  color: #05230f;
+  font-weight: 600;
+  box-shadow: 0 14px 34px -12px rgba(37, 211, 102, 0.7);
+  transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
+}
+
+.fab:hover {
+  transform: translateY(-3px) scale(1.02);
+}
+
+.fab::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  animation: ring-pulse 2.6s ease-out infinite;
+}
+
+.label {
+  font-size: 0.95rem;
+  max-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  opacity: 0;
+  transition: max-width 0.35s var(--ease), opacity 0.35s var(--ease);
+}
+
+.fab:hover .label,
+.fab:focus-visible .label {
+  max-width: 12rem;
+  opacity: 1;
+}
+
+/* Op mobiel altijd het label tonen zou te breed zijn; toon alleen icoon-bubble. */
+@media (max-width: 560px) {
+  .fab {
+    padding: 0.9rem;
+  }
+  .label {
+    display: none;
+  }
+}

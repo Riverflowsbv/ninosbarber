@@ -2,13 +2,13 @@ import styles from "./Sections.module.css";
 
 const words = [
   "Knippen",
+  "Skinfade",
   "Fades",
   "Baard",
   "Contouren",
-  "Kids",
   "Styling",
-  "Walk-in",
   "Op afspraak",
+  "Amstelveen",
 ];
 
 export default function Marquee() {

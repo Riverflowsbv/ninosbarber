@@ -10,7 +10,7 @@ const stats: Stat[] = [
   { value: "2021", label: "Opgericht" },
   { end: 2500, suffix: "+", label: "Tevreden klanten" },
   { end: 5, suffix: ".0", label: "Gemiddelde score" },
-  { end: 6, suffix: "", label: "Dagen open" },
+  { end: 5, suffix: "", label: "Dagen per week open" },
 ];
 
 export default function Stats() {

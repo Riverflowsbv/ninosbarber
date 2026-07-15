@@ -114,12 +114,12 @@ export default function Hero() {
               <span className={styles.metaLabel}>Klantwaardering</span>
             </div>
             <div className={styles.metaItem}>
-              <span className={styles.metaNum}>7 dagen</span>
-              <span className={styles.metaLabel}>Snel een plekje</span>
+              <span className={styles.metaNum}>Op afspraak</span>
+              <span className={styles.metaLabel}>Snel geboekt via WhatsApp</span>
             </div>
             <div className={styles.metaItem}>
-              <span className={styles.metaNum}>Walk-in</span>
-              <span className={styles.metaLabel}>&amp; op afspraak</span>
+              <span className={styles.metaNum}>Sinds 2021</span>
+              <span className={styles.metaLabel}>Barber in Amstelveen</span>
             </div>
           </div>
         </div>

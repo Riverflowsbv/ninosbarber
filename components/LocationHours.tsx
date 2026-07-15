@@ -15,7 +15,7 @@ export default function LocationHours() {
           <h2>Locatie &amp; openingstijden</h2>
           <p>
             Je vindt Nino&apos;s Barber aan {site.address.street} in {site.city}.
-            Loop binnen of maak een afspraak.
+            Maak eenvoudig een afspraak, dan staat je stoel klaar.
           </p>
         </div>
 

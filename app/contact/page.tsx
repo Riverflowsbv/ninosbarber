@@ -8,7 +8,7 @@ import { site, telLink, whatsappLink } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Contact & route",
   description:
-    "Contact en route naar Nino's Barber, Lindenlaan 143 in Amstelveen. Bel, app of loop binnen.",
+    "Contact en route naar Nino's Barber, Lindenlaan 143 in Amstelveen. Bel of app voor een afspraak.",
   alternates: { canonical: "/contact" },
 };
 
@@ -41,7 +41,7 @@ export default function ContactPage() {
       <PageHeader
         eyebrow="Kom langs"
         title="Contact & route"
-        intro={`Je vindt ons aan ${site.address.street} in ${site.city}. Bel, app of loop gewoon even binnen.`}
+        intro={`Je vindt ons aan ${site.address.street} in ${site.city}. Bel of app voor een afspraak.`}
       />
 
       <section className="section" style={{ paddingBottom: 0 }}>

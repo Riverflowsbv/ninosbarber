@@ -15,7 +15,7 @@ const points = [
   },
   {
     title: "Makkelijk een plekje",
-    text: "Snel te boeken via WhatsApp, of loop binnen als het uitkomt.",
+    text: "Snel en simpel te boeken via WhatsApp, op een moment dat jou uitkomt.",
   },
 ];
 

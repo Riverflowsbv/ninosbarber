@@ -22,14 +22,16 @@ export default function ServicesGrid({
             delay={(i % 3) * 90}
             className={styles.card}
           >
-            {s.popular && <span className={styles.popular}>Populair</span>}
             <div className={styles.head}>
               <span className={styles.iconBox}>
                 <ServiceIcon name={s.icon} />
               </span>
+              {s.popular && <span className={styles.popular}>Populair</span>}
+            </div>
+            <div className={styles.nameRow}>
+              <h3 className={styles.name}>{s.name}</h3>
               <span className={styles.price}>{formatPrice(s.price)}</span>
             </div>
-            <h3 className={styles.name}>{s.name}</h3>
             <p className={styles.desc}>{s.description}</p>
             <div className={styles.footer}>
               <span

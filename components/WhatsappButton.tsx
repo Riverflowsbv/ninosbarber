@@ -13,7 +13,7 @@ export default function WhatsappButton() {
       rel="noopener noreferrer"
       aria-label="Stuur Nino een WhatsApp-bericht"
     >
-      <WhatsappIcon size={24} />
+      <WhatsappIcon size={28} />
       <span className={styles.label}>App voor een afspraak</span>
     </a>
   );
